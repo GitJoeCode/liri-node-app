@@ -3,7 +3,7 @@ var axios = require("axios");
 var keys = require("./keys.js");
 var Spotify = require("node-spotify-api");
 var fs = require("fs");
-var moment = require("moment");
+var moment = require("moment"); 
 
 var input = process.argv[2];
 
@@ -32,7 +32,7 @@ function liriRun(input, parameters) {
     }
 }
 
-function getSpotify(songname) {
+function getSpotify(songName) {
     var spotify = new Spotify(keys.spotify);
 
     if(!songName) {
@@ -59,7 +59,7 @@ function getBandsInTown(artist) {
     then(function(response) {
         console.log(response.data[0].venue.name);
         console.log(response.data[0].venue.city);
-        console.log(moment(response.data[0].datetime).format("MM-DD-YYYY");
+        console.log(moment(response.data[0].datetime).format("MM-DD-YYYY"));
     });
 };
 
@@ -70,7 +70,7 @@ function getOMDB(movie) {
 
     var movieQueryURL = "http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy"
 
-    axios.request(movieQueryuRL)
+    axios.request(movieQueryURL)
     .then(function (response) {
         console.log(response.data.Title);
         console.log(response.data.Year);
